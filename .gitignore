@@ -2,3 +2,6 @@
 **/.DS_STORE
 **/config_file*
 **Pipfile**
+**.db
+**.zip
+**.sqlite3
