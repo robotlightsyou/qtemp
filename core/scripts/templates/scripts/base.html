@@ -26,7 +26,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{% url 'scripts-index' %}">robotlightsyou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,20 +34,20 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home
+                <a class="nav-link" href="{% url 'scripts-index' %}">Home
                 <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="{% url 'howto' %}">How To</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Chapters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Template</a>
             </li>
-            <li class="nav-item dropdown">
+            {% comment %} <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Action</a>
@@ -56,7 +56,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Separated link</a>
                 </div>
-            </li>
+            </li> {% endcomment %}
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -65,14 +65,13 @@
         </div>
     </nav>
 
-    <div class="container">
         <div class="jumbotron">
             {% block jumbo %}
                 <style>
                     {% comment %} #jum {color:red;} {% endcomment %}
                     #jum {text-align: center;}
                 </style>
-                <h1 id='jum'>robotlightsyou QLab Applescript Tutotrial</h1>
+                <h1 id='jum'>QLab Applescript Tutotrial</h1>
                 {% comment %} <h1 class="display-3">Hello, world!</h1>
                 <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                 <hr class="my-4">
@@ -83,8 +82,27 @@
             {% endblock jumbo %}
         </div>
     
-        <div class='container'>
-            {% block content %}{% endblock content %}
-        </div>
+    <div class="container">
+        <div class='row'>
+            <div class="col-md-8">
+                {% block content %}{% endblock content %}
+            </div>
+    
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h3>Chapters</h3>
+        {% comment %} <!--          <p class='text-muted'>You can put any information here you'd like.--> {% endcomment %}
+                    <p class='text'>Jump to a specific task
+                        <ul>
+                            <div class="list-group">
+                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">Create Disarm from Arm</a>
+                                <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">How to use this site</a>
+                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Return to the homepage</a>
+                            </div>
+                        </ul>
+                    </p>
+                </div>
+            </div>     
+        </div>   
     </div>
 </body>
