@@ -2,7 +2,6 @@
 {% load static %}
 {% block jumbo %}
 <div class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "media/workspace-hotkey.png" %})">
-    {% comment %} <div class="jumbotron"> {% endcomment %}
         <div class="container text-center text-lg-left">
         <style>
             h1 {font-size:8vw;
@@ -28,15 +27,22 @@
 {% block content %}
 
     <div class='container'>
-        <h2>welcome to the applescript tutorial</h2>
-        <p>please choose:
-            <ul>
-                <li><a href="{% url 'arm' %}">Write a script to Arm Cues</a></li>
-                <li><a href="{% url 'howto' %}">How to use this site</a></li>
-                <li><a href="{% url 'scripts-index' %}">Home</a></li>
-                {% comment %} <!--<li><a href="{% url 'trip_inventory-home' %}">Inventory</a></li>--> {% endcomment %}
-            </ul>
+        <style>h2 {text-align:center;}</style>
+        <h2><strong>welcome to the applescript tutorial</strong></h2>
+        <p>In the beginning there was the work of others. Smarter, more experinced people 
+        that came before and shared their knowledge. I started with simple scripts that filled
+        needs missing in the production release of QLab. After reading a few and integrating them  
+        into my workflow the day came when I needed something new. 
         </p>
+        <p>First I tried opening the editor and making something of my own. This was scary and 
+        I didn't really nderstand the moving pieces, and I failed miserably. The next time I needed something 
+        I decided to try and hack one of the scripts I already had. I changed a few variables, 
+        values, and properties, et voila - I had a new tool. This was the beginning of a 
+        bountiful relationship.</p>
+        <p>That was 5 years ago. Since then I've discovered a number of great resources, 
+        and built my own template file to improve my everyday workflow. This site serves as a walkthrough of 
+        that file, as well as a guide to learn how to hack together applescripts to fill 
+        the specific needs of your venue.</p>
     </div>
 
     

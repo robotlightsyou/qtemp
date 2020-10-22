@@ -1,17 +1,43 @@
 {% extends 'scripts/base.html' %}
-{% comment %} {%block jumbo%}{% endblock jumbo %} {% endcomment %}
+{% load static %}
 
 {% block content %}
     <div class='container'>
         <h1>how to use this site</h1>
-        <p>Please choose:
-            <ul>
-                <li><a href="{% url 'arm' %}">Write a script to Arm Cues</a></li>
-                <li><a href="{% url 'howto' %}">How to use this site</a></li>
-                <li><a href="{% url 'scripts-index' %}">Home</a></li>
-                {% comment %} <!--<li><a href="{% url 'trip_inventory-home' %}">Inventory</a></li>--> {% endcomment %}
-            </ul>
+        <p>This site focuses on adapting existing code into new tools to suit individual needs.
+        On this page we'll walk through some of the common resources from writing scripts.
+        The primary tools are the script editor and the library. Let's take a look at those.</p>
+
+        <img src="{% static "media/tutes/howto/empty_editor.png" %}" alt="img could not load" class="img-fluid">
+
+        <p>Here we see an empty script editor(in dark mmode). At the top are seveal buttons. I encourage
+        you to explore them fully, however we will only be using Play, Compile, and potentially Stop. 
         </p>
+        <p></p>
+        <img src="{% static "media/tutes/howto/play_buttons.png" %}" alt="img could not load" class="img-fluid">
+        <p></p>
+        <p>At the bottom of the editor there are three icons on the left side. The third option is to show or hide log.
+        </p>
+        <p></p>
+        <img src="{% static "media/tutes/howto/log.png" %}" alt="img could not load" class="img-fluid">
+        <p></p>
+        <p>When we show the log we get some additional options in the middle of the editor. 
+        The only one I ever use is Events, and I always use it. This gives a 
+        detailed log of every action taken in the execution of a script, handy for debugging.</p>
+        <img src="{% static "media/tutes/howto/events.png" %}" alt="img could not load" class="img-fluid">
+        <p></p>
+        <p>Now you're ready to start typing. The large box on the top half of the window
+        is for inputting your script. Once you have completed you can press the hammer button
+        to compile, or use the <CMD+K> keyboard shortcut. If you don't receive any errors you're ready 
+        run the script using the play button, or the <CMD+R> keyboard shortcut. </p>
+        <p></p>
+        <p>With a basic understanding of what you're looking at, we're now
+        ready to start hacking with a script. As we go through our exercises we'll
+        cover the component parts, how to modify, and even how to write simple scripts from scratch.</p>
+        <p></p>
+        <a href="{% url 'arm' %}" style="color:#F39C12; text-align:center;"> Continue to the first exercise.</a>
+        <p></p>
+        <p></p>
     </div>
 {% endblock content %}
 

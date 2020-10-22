@@ -10,11 +10,8 @@
     {% comment %} <!-- Bootstrap CSS --> {% endcomment %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    {% comment %} <!--
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> --> {% endcomment %}
     <link rel="stylesheet" type="text/css" href={% static 'scripts/bootstrap.min.css' %}>
+
 {% block title %}
     {% if title %}
         <title>Applescript tutes {{ title }}</title>
@@ -25,7 +22,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning">
         <a class="navbar-brand" href="{% url 'scripts-index' %}">robotlightsyou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,38 +45,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Template</a>
             </li>
-            {% comment %} <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </li> {% endcomment %}
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            {% comment %} <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            </form> {% endcomment %}
         </div>
     </nav>
 
             {% block jumbo %}
         <div class="jumbotron">
                 <style>
-                    {% comment %} #jum {color:red;} {% endcomment %}
                     #jum {text-align: center;font-size:7vh;}
                 </style>
-                <h1 id='jum'>QLab Applescript Tutorial</h1>
-                {% comment %} <h1 class="display-3">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </p> {% endcomment %}
+                <h1 id='jum'>QLab <span style="color:#F39C12;font-weight:bold">Applescript</span> Tutorial</h1>
             {% endblock jumbo %}
         </div>
     
@@ -87,17 +67,18 @@
             <div class="col-md-8">
                 {% block content %}{% endblock content %}
             </div>
-    
+            
             <div class="col-md-4">
                 <div class="content-section">
-                    <h3>Chapters</h3>
-        {% comment %} <!--          <p class='text-muted'>You can put any information here you'd like.--> {% endcomment %}
-                    <p class='text'>Jump to a specific task
+                    <h3 style="text-align:center;">Chapters</h3>
                         <ul>
                             <div class="list-group">
-                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">Create Disarm from Arm</a>
-                                <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">How to use this site</a>
-                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Return to the homepage</a>
+                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">Fades</a>
+                                <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">Audio Levels</a>
+                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Other</a>
+                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Batch Edits</a>
+                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Logging</a>
+                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Projector</a>
                             </div>
                         </ul>
                     </p>

@@ -1,27 +1,12 @@
 {% extends 'scripts/base.html' %}
+{% load static %}
 {% block content %}
     <div class='container'>
         <h1>Change Arm to Disarm</h1>
         <h2>It's easier to just start hacking</h2>
-        <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-        <p><small>This line of text is meant to be treated as fine print.</small></p>
-        <p>The following is <strong>rendered as bold text</strong>.</p>
-        <p>The following is <em>rendered as italicized text</em>.</p>
-        <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+        <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid">
 
-        <p>Please choose:
-            <ul>
-                <div class="list-group">
-                    <a href="{% url 'arm' %}" class="list-group-item list-group-item-action active">Create Disarm from Arm</a>
-                    <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">How to use this site</a>
-                    <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Return to the homepage</a>
-                    {% comment %} <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action disabled">Return to the homepage</a> {% endcomment %}
-                </div>
-                {% comment %} <li><a href="{% url 'arm' %}">Check Out</a></li>
-                <li><a href="{% url 'howto' %}">Check In</a></li>
-                <li><a href="{% url 'scripts-index' %}">Profile</a></li> {% endcomment %}
-                {% comment %} <!--<li><a href="{% url 'trip_inventory-home' %}">Inventory</a></li>--> {% endcomment %}
-            </ul>
-        </p>
+
+
     </div>
 {% endblock content %}
