@@ -5,3 +5,4 @@
 **.db
 **.zip
 **.sqlite3
+**/media/**

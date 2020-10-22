@@ -1,0 +1,16 @@
+{% extends 'scripts/base.html' %}
+{% comment %} {%block jumbo%}{% endblock jumbo %} {% endcomment %}
+{% block content %}
+    <div class='container'>
+        <h1>how to use this site</h1>
+        <p>Please choose:
+            <ul>
+                <li><a href="{% url 'arm' %}">Write a script to Arm Cues</a></li>
+                <li><a href="{% url 'howto' %}">How to use this site</a></li>
+                <li><a href="{% url 'scripts-index' %}">Home</a></li>
+                {% comment %} <!--<li><a href="{% url 'trip_inventory-home' %}">Inventory</a></li>--> {% endcomment %}
+            </ul>
+        </p>
+    </div>
+{% endblock content %}
+
