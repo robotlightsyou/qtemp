@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <a class="navbar-brand" href="{% url 'scripts-index' %}">robotlightsyou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -65,13 +65,13 @@
         </div>
     </nav>
 
-        <div class="jumbotron">
             {% block jumbo %}
+        <div class="jumbotron">
                 <style>
                     {% comment %} #jum {color:red;} {% endcomment %}
-                    #jum {text-align: center;}
+                    #jum {text-align: center;font-size:7vh;}
                 </style>
-                <h1 id='jum'>QLab Applescript Tutotrial</h1>
+                <h1 id='jum'>QLab Applescript Tutorial</h1>
                 {% comment %} <h1 class="display-3">Hello, world!</h1>
                 <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                 <hr class="my-4">

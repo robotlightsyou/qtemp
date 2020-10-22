@@ -1,8 +1,8 @@
 {% extends 'scripts/base.html' %}
 {% load static %}
-
 {% block jumbo %}
-    <div class="jumbotron">
+<div class="jumbotron bg-cover" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url({% static "media/workspace-hotkey.png" %})">
+    {% comment %} <div class="jumbotron"> {% endcomment %}
         <div class="container text-center text-lg-left">
         <style>
             h1 {font-size:8vw;
@@ -28,8 +28,8 @@
 {% block content %}
 
     <div class='container'>
-        <h2>Welcome to the applescript tutorial</h2>
-        <p>Please choose:
+        <h2>welcome to the applescript tutorial</h2>
+        <p>please choose:
             <ul>
                 <li><a href="{% url 'arm' %}">Write a script to Arm Cues</a></li>
                 <li><a href="{% url 'howto' %}">How to use this site</a></li>

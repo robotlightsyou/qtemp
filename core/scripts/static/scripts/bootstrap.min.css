@@ -9585,6 +9585,13 @@ a.text-dark:hover {
 }
 
 
+.jumbotron bg-cover{
+	/* background-image: url('media/workspace-hotkey.png');  */
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
 
 
 /* .jumbotron {
