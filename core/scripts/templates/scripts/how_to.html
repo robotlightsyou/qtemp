@@ -1,44 +1,127 @@
 {% extends 'scripts/base.html' %}
 {% load static %}
 
+{% comment %} I recommend developing in the script editor, and once you have a working script transfering to QLab. The edittor gives much more detail than QLab.
+I am not an expert, this is more about finding things that are close to solutions and gaff taping together a work around.
+Introduce CS terms better  {% endcomment %}
+
+
+
+
 {% block content %}
     <div class='container'>
-        <h1>how to use this site</h1>
+        <h1>how to edit applescripts</h1>
+        <p></p>
+        <h3>the script editor</h3>
+        <p></p>
         <p>This site focuses on adapting existing code into new tools to suit individual needs.
         On this page we'll walk through some of the common resources from writing scripts.
         The primary tools are the script editor and the library. Let's take a look at those.</p>
-
-        <img src="{% static "media/tutes/howto/empty_editor.png" %}" alt="img could not load" class="img-fluid">
-
+        <div>
+            <img src="{% static "media/howto/empty_editor.png" %}" alt="img could not load" class="img-fluid">
+        </div>
         <p>Here we see an empty script editor(in dark mmode). At the top are seveal buttons. I encourage
         you to explore them fully, however we will only be using Play, Compile, and potentially Stop. 
         </p>
         <p></p>
-        <img src="{% static "media/tutes/howto/play_buttons.png" %}" alt="img could not load" class="img-fluid">
+        <div>
+            <img src="{% static "media/howto/play_buttons.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>
         <p></p>
         <p>At the bottom of the editor there are three icons on the left side. The third option is to show or hide log.
         </p>
         <p></p>
-        <img src="{% static "media/tutes/howto/log.png" %}" alt="img could not load" class="img-fluid">
+        <div >
+            <img src="{% static "media/howto/log.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>
         <p></p>
         <p>When we show the log we get some additional options in the middle of the editor. 
         The only one I ever use is Events, and I always use it. This gives a 
         detailed log of every action taken in the execution of a script, handy for debugging.</p>
-        <img src="{% static "media/tutes/howto/events.png" %}" alt="img could not load" class="img-fluid">
+        <div>
+            <img src="{% static "media/howto/events.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>
         <p></p>
         <p>Now you're ready to start typing. The large box on the top half of the window
         is for inputting your script. Once you have completed you can press the hammer button
-        to compile, or use the <CMD+K> keyboard shortcut. If you don't receive any errors you're ready 
-        run the script using the play button, or the <CMD+R> keyboard shortcut. </p>
+        to compile, or use the <span style="color:#F39C12;font-weight:bold">CMD+K</span> keyboard shortcut. If you don't receive any errors you're ready 
+        run the script using the play button, or the <span style="color:#F39C12;font-weight:bold">CMD+R</span> keyboard shortcut. </p>
+        <p></p>
+
+        <p></p>
+        <h3>the library</h3>
+        <p></p>
+        <p>Included with the script editor is the library. Navigate to the Windows
+        menu of the editor and select Library from the dropdown to view it. Or use the 
+        keyboard shortcut <span style="color:#F39C12;font-weight:bold">SHIFT+CMD+L</span></p>
+        <p></p>
+        <div>
+            <img src="{% static "media/howto/library.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>        
+        <p>When you open the library for an application you'll see two sections, a navigation
+        browser at the top and a list of definitions on the bottom. In the navigation browser on 
+        the left you'll find an entry for the Standard suite and one for QLab(assuming
+        that is the library file you opened). Objects and actions in the standard suite
+        should work with most software on a mac. I say should and most because not all
+        developers provide thorough applescript support, but technically the standard commands
+        should provide basic functionality. What's more interesting for us is the QLab suite.</p>
+        <div>
+            <img src="{% static "media/howto/qlabsuite.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>   
+        <p>The QLab suite provides a robust sset of objects and commands to manipulate your showfile. Associated with each
+        object are a set of properties you can modify. Let's look at the entry for cue.</p>
+        <div>
+            <img src="{% static "media/howto/cue.png" %}" alt="img could not load" class="img-fluid mx-auto d-block">
+        </div>   
+        <p>Cue's have a lot of properties. It's good to familiarize yourself with all of them, but there's no 
+        need to memorize everything, you can always look the specific name or syntax up. The 7 options that 
+        start with the lettr q are usual suspects, but several of the otheres I've never used. Next to a parameter you'll
+        see a datatype in parenthesis. This list is not exhaustive, but some types to be aware of are:</p>
+        <div>
+            <table>
+                <thead>
+                    <tr class="table-warning">
+                        <th scope="col">Datatype</th>
+                        <th scope="col">Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-secondary">
+                        <td>Integer</td>
+                        <td>A whole number without decimals or fractions, such as 1, or 9.</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td>Real</td>
+                        <td>A number with a decimal, such as 1.0 or 9.9</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td>Text</td>
+                        <td>Written characters. Important for distinguishing "1" from 1.</td>
+                    </tr>
+                    <tr class="table-secondary">
+                        <td>Boolean</td>
+                        <td>True or False</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p></p>
+        <p>Datatypes are important to pay attention to. Often times an error is simply because you are trying to 
+        manipulate a text when you think it is an integer. I hope as you scroll through the QLab suite you see
+        what a powerful tool this can be with so many options at our control. </p>
+        <p> You've had a lot thrown at you fast. As
+        we move into the exercises we'll slow down and examine the constituent pieces more closely.</p>
         <p></p>
         <p>With a basic understanding of what you're looking at, we're now
         ready to start hacking with a script. As we go through our exercises we'll
         cover the component parts, how to modify, and even how to write simple scripts from scratch.</p>
-        <p></p>
-        <a href="{% url 'arm' %}" style="color:#F39C12; text-align:center;"> Continue to the first exercise.</a>
+        <div style="margin-bottom:100px">
+            <h3>
+            <a href="{% url 'arm' %}" style="color:#F39C12; text-align:center;"> Continue to the first exercise.</a>
+            </h3>
+        </div>
         <p></p>
         <p></p>
     </div>
 {% endblock content %}
-
 
