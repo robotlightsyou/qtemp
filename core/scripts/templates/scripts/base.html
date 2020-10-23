@@ -56,7 +56,7 @@
             {% block jumbo %}
         <div class="jumbotron">
                 <style>
-                    #jum {text-align: center;font-size:7vh;}
+                    #jum {text-align: center;font-size:7vh;margin-top:75px;}
                 </style>
                 <h1 id='jum'>QLab <span style="color:#F39C12;font-weight:bold">Applescript</span> Tutorial</h1>
             {% endblock jumbo %}
@@ -70,9 +70,10 @@
             
             <div class="col-md-4">
                 <div class="content-section">
-                    <h3 style="text-align:center;">Chapters</h3>
+                    {% comment %} <h3 style="text-align:center;">Chapters</h3> {% endcomment %}
                         <ul>
                             <div class="list-group">
+                                <span style="font-size:large, font-weight:bold"><a href="#" class="list-group-item list-group-item-action active">Chapters</a></span>
                                 <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">Fades</a>
                                 <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">Audio Levels</a>
                                 <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Other</a>
