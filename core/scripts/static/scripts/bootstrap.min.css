@@ -5073,7 +5073,7 @@ a.badge-dark:focus {
 }
 .list-group-item {
     position: relative;
-    display: block;
+    display: inline-block;
     padding: 0.75rem 1.25rem;
     background-color: #303030;
     border: 1px solid #444;
@@ -9586,8 +9586,10 @@ a.text-dark:hover {
 
 .list-group-item.active {
 
-    color: #fff;
+    color: #375a7f;
     background-color: #F39C12;
+    font-size: larger;
+
     /* border-color: #375a7f; */
 }
 
@@ -9595,6 +9597,12 @@ a.text-dark:hover {
     width: 100%;
     color: #e0dbae;
     text-align: inherit;
+}
+
+.btn-primary {
+    color: #375a7f;
+    background-color: #F39C12;
+    border-color: #375a7f;
 }
 
 .jumbotron bg-cover{
