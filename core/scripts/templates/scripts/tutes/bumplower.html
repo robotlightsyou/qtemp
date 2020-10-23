@@ -1,0 +1,32 @@
+{% extends 'scripts/base.html' %}
+{% load static %}
+{% block content %}
+    <div class='container'>
+        <h1>convert bump up to bump down</h1>
+        <div>
+            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+        <div class='content-section m-2'>
+            <p>Like thedisarm script, this is a simple adjustmnet to change the <span style="color:#F39C12;font-weight:bold">master audio level</span>.</p> 
+            </div>
+        <div>
+            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+        <div class='content-section m-2'>
+            <p>REcall the options available for boolean propertires and modify the third line of this
+            script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
+        </div>
+        <div>
+            <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+
+        <div style="margin-bottom:100px">
+            <h3>
+            <a href="{% url 'uselist' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            </h3>
+        </div>
+
+
+
+    </div>
+{% endblock content %}

@@ -14,9 +14,9 @@
 
 {% block title %}
     {% if title %}
-        <title>Applescript tutes {{ title }}</title>
+        <title>{{ title }}</title>
     {% else %}
-        <title>Applescript</title>
+        <title>applescript tutes</title>
     {% endif %}
 {% endblock title %}
 </head>
@@ -32,18 +32,18 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'scripts-index' %}">Home
+                <a class="nav-link" href="{% url 'scripts-index' %}">home
                 <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'howto' %}">Editor</a>
+                <a class="nav-link" href="{% url 'howto' %}">editor</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Chapters</a>
+                <a class="nav-link" href="#">chapters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Template</a>
+                <a class="nav-link" href="#">template</a>
             </li>
             </ul>
             {% comment %} <form class="form-inline my-2 my-lg-0">
@@ -58,7 +58,7 @@
                 <style>
                     #jum {text-align: center;font-size:7vh;margin-top:75px;}
                 </style>
-                <h1 id='jum'>QLab <span style="color:#F39C12;font-weight:bold">Applescript</span> Tutorial</h1>
+                <h1 id='jum'>qlab <span style="color:#F39C12;font-weight:bold">applescript</span> tutorial</h1>
             {% endblock jumbo %}
         </div>
     
@@ -73,13 +73,14 @@
                     {% comment %} <h3 style="text-align:center;">Chapters</h3> {% endcomment %}
                         <ul>
                             <div class="list-group">
-                                <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">Chapters</a></span>
-                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">Fades</a>
-                                <a href="{% url 'howto' %}" class="list-group-item list-group-item-action">Audio Levels</a>
-                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Other</a>
-                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Batch Edits</a>
-                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Logging</a>
-                                <a href="{% url 'scripts-index' %}" class="list-group-item list-group-item-action">Projector</a>
+                                <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">chapters</a></span>
+                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">arm --> disarm</a>
+                                <a href="{% url 'projmanager' %}" class="list-group-item list-group-item-action">projector manager</a>
+                                <a href="{% url 'batchadjust' %}" class="list-group-item list-group-item-action">batch edits</a>
+                                <a href="{% url 'bumplower' %}" class="list-group-item list-group-item-action">bump lower from raise</a>
+                                <a href="{% url 'uselist' %}" class="list-group-item list-group-item-action">use list</a>
+                                <a href="{% url 'addvideo' %}" class="list-group-item list-group-item-action">add video to fade</a>
+                                <a href="{% url 'fadein' %}" class="list-group-item list-group-item-action">fadein from out</a>
                             </div>
                         </ul>
                     </p>

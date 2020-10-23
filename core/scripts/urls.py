@@ -19,6 +19,13 @@ from scripts import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', views.index, name='scripts-index'),
+    path('anatomy/', views.anatomy, name='anatomy'),
+    path('howto', views.howto, name='howto'),
     path('arm/', views.arm, name='arm'),
-    path('howto', views.how_to, name='howto'),
+    path('addvideo', views.addvideo, name='addvideo'),
+    path('batchadjust', views.batchadjust, name='batchadjust'),
+    path('bumplower', views.bumplower, name='bumplower'),
+    path('fadein', views.fadein, name='fadein'),
+    path('projmanager', views.projmanager, name='projmanager'),
+    path('uselist', views.uselist, name='uselist'),
 ]

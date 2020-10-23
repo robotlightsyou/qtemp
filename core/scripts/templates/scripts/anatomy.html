@@ -2,18 +2,13 @@
 {% load static %}
 {% block content %}
     <div class='container'>
-        <h1>Change Arm to Disarm</h1>
-        <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
-        </div>
+        <h1>anatomy of an applescript</h1>
         <div class='content-section m-2'>
-            <p>Here we see armed is a boolean property of a cue object, which means it's only possible states are 
-            <span style="color:#F39C12;font-weight:bold">true</span> and <span style="color:#F39C12;font-weight:bold">false.</span>
-            To construct an applescript we'll need a few things. First is the <span style="color:#F39C12;font-weight:bold">tell block</span>. 
+            <p>First is the <span style="color:#F39C12;font-weight:bold">tell block</span>. 
             The tell block tells applescript what program to send commands to.</p>
         </div>
         <div>
-            <img src="{% static "media/tutes/disarm/tellblock.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/anatomy/tellblock.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
             <p>For some applications the tell block will only consist of the application. As we can see, this tell block also mentions
@@ -24,7 +19,7 @@
             requires and end line.</p>
         </div>
         <div>
-            <img src="{% static "media/tutes/disarm/comment.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/anatomy/comment.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
             <p>The next line we see is a <span style="color:#F39C12;font-weight:bold">comment</span>. Single line comments begin with <span style="color:#F39C12;font-weight:bold">--</span>. This is simply 
@@ -32,31 +27,27 @@
             whatever you want in a comment as they are ignored by the compiler. You can also create a multiline comment using <br><span style="color:#F39C12;font-weight:bold">(*this is a <br>multiline comment*)</span> </p>
         </div>
         <div>
-            <img src="{% static "media/tutes/disarm/standardsuite.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/anatomy/standardsuite.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
             <p>Terms with blue syntax highlighting are part of <span style="color:#F39C12;font-weight:bold">standard suite</span>. These are actions or classes that should be available
             across all applications that support applescript.</p>
         </div>
         <div>
-            <img src="{% static "media/tutes/disarm/qlabsuite.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/anatomy/qlabsuitevar.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
             <p>Terms with purple syntax highlighting are part of <span style="color:#F39C12;font-weight:bold">application suite</span>. Keep in mind different applications may reuse the same terms, however
             it's possible they will be implemented in a different manner. This is a minor worry for me since I mostly script for QLab.</p>
         </div>
         <div>
-            <img src="{% static "media/tutes/disarm/variable.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/anatomy/variable.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
             <p>Terms with green syntax highlighting are part of <span style="color:#F39C12;font-weight:bold">variables</span>. As you can see in the comment, the syntax for declaring a variable is 
             <span style="color:#F39C12;font-weight:bold">set variable_name to value</span>. Variables are available to the scope in which they are declared, and any scopes that are inside it. I'll unpack that a little more
             when we have a more complex example.</p>
-            <p>Now that we've covered what makes up a simle applescript, lets actually modify this one to do something else. REcall the options available for boolean propertires and modify the third line of this
-            script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
-        </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
+            <p>Now that we've covered what makes up a simple applescript, lets modify one to do something else.</p>
         </div>
 
         <div style="margin-bottom:100px">
