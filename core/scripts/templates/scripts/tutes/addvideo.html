@@ -1,0 +1,23 @@
+{% extends 'scripts/base.html' %}
+{% load static %}
+{% block content %}
+    <div class='container'>
+        <h1>add video to fade</h1>
+        <div>
+            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+        <div class='content-section m-2'>
+            <p>HIn this script we'll add a <span style="color:#F39C12;font-weight:bold">video fade</span> to an <span style="color:#F39C12;font-weight:bold">audio fade</span>.</p> 
+            </div>
+
+
+        <div style="margin-bottom:100px">
+            <h3>
+            <a href="{% url 'fadein' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            </h3>
+        </div>
+
+
+
+    </div>
+{% endblock content %}
