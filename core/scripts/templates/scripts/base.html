@@ -67,32 +67,20 @@
             <div class="col-md-8">
                 {% block content %}{% endblock content %}
             </div>
-            
+            {% comment %} Sidebar {% endcomment %}
             <div class="col-md-4">
-                {% comment %} <div class="content-section"> {% endcomment %}
-                    {% comment %} <h3 style="text-align:center;">Chapters</h3> {% endcomment %}
-                        <ul>
-                            <div class="list-group">
-                                <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">chapters</a></span>
-                                <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">arm --> disarm</a>
-                                <a href="{% url 'projmanager' %}" class="list-group-item list-group-item-action">projector manager</a>
-                                <a href="{% url 'batchadjust' %}" class="list-group-item list-group-item-action">batch edits</a>
-                                <a href="{% url 'bumplower' %}" class="list-group-item list-group-item-action">bump lower from raise</a>
-                                <a href="{% url 'uselist' %}" class="list-group-item list-group-item-action">use list</a>
-                                <a href="{% url 'addvideo' %}" class="list-group-item list-group-item-action">add video to fade</a>
-                                <a href="{% url 'fadein' %}" class="list-group-item list-group-item-action">fadein from out</a>
-                            </div>
-                        </ul>
-                    </p>
-                {% comment %} </div> {% endcomment %}
-                <div class='content-section'>
-                    {% block sidebar %}
-                    <blockquote class="blockquote text-center">
-                        <p class="mb-0">This is the side bar test to see if blockquotes line up any easier or if I'm going to have to actually learn css</p>
-                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                    {% endblock sidebar %}
-                </div>
+                <ul>
+                    <div class="list-group">
+                        <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">chapters</a></span>
+                        <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">arm --> disarm</a>
+                        <a href="{% url 'projmanager' %}" class="list-group-item list-group-item-action">projector manager</a>
+                        <a href="{% url 'batchadjust' %}" class="list-group-item list-group-item-action">batch edits</a>
+                        <a href="{% url 'bumplower' %}" class="list-group-item list-group-item-action">bump up --> lower</a>
+                        <a href="{% url 'uselist' %}" class="list-group-item list-group-item-action">use list</a>
+                        <a href="{% url 'addvideo' %}" class="list-group-item list-group-item-action">add video to fade</a>
+                        <a href="{% url 'fadein' %}" class="list-group-item list-group-item-action">fadeout --> in</a>
+                    </div>
+                </ul>
             </div>     
         </div>   
     </div>
