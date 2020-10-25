@@ -41,3 +41,8 @@ def projmanager(request):
 
 def uselist(request):
     return render(request, 'scripts/tutes/uselist.html', {'title': 'use list'})
+
+def scope(request):
+    return render(request, 'scripts/tutes/scope.html', {'title': 'scope and functions'})
+
+

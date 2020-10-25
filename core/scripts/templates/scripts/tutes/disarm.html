@@ -8,13 +8,18 @@
         </div>
         <div class='content-section m-2'>
             <p>Here we see armed is a boolean property of a cue object, which means it's only possible states are 
-            <span style="color:#F39C12;font-weight:bold">true</span> and <span style="color:#F39C12;font-weight:bold">false.</span></p> 
+            <span style="color:#F39C12;font-weight:bold">true</span> and <span style="color:#F39C12;font-weight:bold">false</span>. Below is a
+            basic script for setting a cue to <span style="color:#F39C12;font-weight:bold">armed</span>. It starts with the <span style="color:#F39C12;font-weight:bold">tell block</span> 
+            identifying QLab as the intended application focusing on the front window as expected. Next there is a comment from the programmer reiterating the 
+            syntax to set values in applescript. Following that we have the declation of the <span style="color:#F39C12;font-weight:bold">variable myQ</span>.* Recall that green syntax highlighting 
+            is for variables. Next in purple we see that we are changing the <span style="color:#F39C12;font-weight:bold">armed</span> property of myQ to true. And finally we close the script 
+            with an <span style="color:#F39C12;font-weight:bold">end tell</span>.</p> 
         </div>
         <div>
             <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
-            <p>REcall the options available for boolean propertires and modify the third line of this
+            <p>Recall the options available for boolean properties and modify this
             script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
         </div>
         <div>
@@ -27,7 +32,7 @@
             </h3>
         </div>
 
-
+<div><p>* camelCase vs snake_case</p></div>
 
     </div>
 {% endblock content %}
