@@ -15,18 +15,34 @@
             is for variables. Next in purple we see that we are changing the <span style="color:#F39C12;font-weight:bold">armed</span> property of myQ to true. And finally we close the script 
             with an <span style="color:#F39C12;font-weight:bold">end tell</span>.</p> 
         </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+        <div class='content-section m-2'>
+            <pre>
+tell application "com.figurer53.Qlab.4" to tell front workspace
+    set myQ to last item of (selected as list)
+    set armed of myQ to true 
+end tell</pre>
         </div>
+        {% comment %} <div>
+            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div> {% endcomment %}
         <div class='content-section m-2'>
             <p>Recall the options available for boolean properties and modify this
-            script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
-        </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
+            script so that it changes the selected cue to disarmed instead of armed.</p>
         </div>
 
-        <div style="margin-bottom:100px">
+        <div class="container">
+            <h3> <span style="color:#F39C12;font-weight:bold">Click to reveal solution</span></h3>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button> 
+            <div class='collapse m-2' id='demo'>
+                <pre>
+tell application "com.figurer53.Qlab.4" to tell front workspace
+    set myQ to last item of (selected as list)
+    set armed of myQ to false 
+end tell</pre> 
+            </div> 
+        </div> 
+            
+        <div style="mt-2 margin-bottom:100px">
             <h3>
             <a href="{% url 'projmanager' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
             </h3>
