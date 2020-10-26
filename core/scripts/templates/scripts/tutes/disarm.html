@@ -31,8 +31,8 @@ end tell</pre>
         </div>
 
         <div class="container">
-            <h3> <span style="color:#F39C12;font-weight:bold">Click to reveal solution</span></h3>
-            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button> 
+            <h3> <span style="color:#F39C12;">Click to reveal solution</span></h3>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Reveal</button> 
             <div class='collapse m-2' id='demo'>
                 <pre>
 tell application "com.figurer53.Qlab.4" to tell front workspace
@@ -41,14 +41,15 @@ tell application "com.figurer53.Qlab.4" to tell front workspace
 end tell</pre> 
             </div> 
         </div> 
+<div><p>* camelCase vs snake_case</p></div>
             
-        <div style="mt-2 margin-bottom:100px">
-            <h3>
-            <a href="{% url 'projmanager' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+        <div style="margin-bottom:100px">
+            <h3 style="text-align:center;">
+            <a href="{% url 'projmanager' %}" style="color:#F39C12;">Continue to the next exercise.</a>
             </h3>
         </div>
+        
 
-<div><p>* camelCase vs snake_case</p></div>
 
     </div>
 {% endblock content %}

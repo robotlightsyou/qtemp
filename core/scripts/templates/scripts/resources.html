@@ -1,0 +1,25 @@
+{% extends 'scripts/base.html' %}
+{% load static %}
+{% block content %}
+    <div class='container'>
+        <h1>Resources</h1>
+        <div class='content-section m-2'>
+            <ul>
+                <li><a href="www.qlabcookbook.com">The QLab Cookbook by Mic Pool</a></li>
+                <li><a href="www.allthatyouhear">The Rich Walsh Template by Rich Walsh</a></li>
+                <li><a href="https://qlab.app/cookbook">Figure 53's Official Cookbook and additional documentation</a></li>
+                <li><a href="https://groups.google.com/d/forum/qlab">QLab on Google Groups</a></li>
+                <li><a href="https://www.facebook.com/groups/488915331311641">QLab on Facebook</a></li>
+            </ul> 
+        </div>
+
+        <div style="margin-bottom:100px">
+            <h3>
+            <a href="{% url 'addvideo' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            </h3>
+        </div>
+
+
+
+    </div>
+{% endblock content %}

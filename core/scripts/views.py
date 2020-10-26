@@ -45,4 +45,5 @@ def uselist(request):
 def scope(request):
     return render(request, 'scripts/tutes/scope.html', {'title': 'scope and functions'})
 
-
+def resources(request):
+    return render(request, 'scripts/resources.html', {'title': 'resources'})

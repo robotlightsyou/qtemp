@@ -47,6 +47,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">template</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'resources' %}">resources</a>
+            </li>
             </ul>
             {% comment %} <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -76,6 +79,7 @@
                         <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">chapters</a></span>
                         <a href="{% url 'arm' %}" class="list-group-item list-group-item-action">arm --> disarm</a>
                         <a href="{% url 'projmanager' %}" class="list-group-item list-group-item-action">projector manager</a>
+                        <a href="{% url 'scope' %}" class="list-group-item list-group-item-action">scope</a>
                         <a href="{% url 'batchadjust' %}" class="list-group-item list-group-item-action">batch edits</a>
                         <a href="{% url 'bumplower' %}" class="list-group-item list-group-item-action">bump up --> lower</a>
                         <a href="{% url 'uselist' %}" class="list-group-item list-group-item-action">use list</a>
