@@ -9578,7 +9578,7 @@ a.text-dark:hover {
 .list-group-item-action:focus,
 .list-group-item-action:hover {
     background-color: #F39C12;
-    color: #fff;
+    color: #375a7f;
 }
 .list-group-item-action .list-group-item-heading {
     color: #fff;
@@ -9602,6 +9602,13 @@ a.text-dark:hover {
 .btn-primary, #reveal {
     color: #375a7f;
     background-color: #F39C12;
+    border-color: #375a7f;
+    
+}
+
+#reveal:hover {
+    color: #fff;
+    background-color: #375a7f;
     border-color: #375a7f;
 }
 
