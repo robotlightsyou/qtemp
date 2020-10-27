@@ -2,16 +2,69 @@
 {% load static %}
 {% block content %}
     <div class='container'>
-        <h1>convert set armed to set disarmed</h1>
+        <h1>use lists for improved readability</h1>
         <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/uselist/inc.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
-            <p>I don't really remember what his one is, but it's gonna be <span style="color:#F39C12;font-weight:bold">rad</span>.</p>
+            <p>This script is very similar to our bump script, but instead of having the adjustment hard coded into the 
+            script, here we will use the enterSomeText function from before to prompt the user for the change amount. Since we've already
+            that code I've trimmed picture short, the full code can be copied below. </p>
+            <p>
+                Our if statement in this script is a little long. In applescript you have to explicitly define
+                conditionals, which can get quite complicated to read. A simpler option when checking for multiple
+                options is to use a <span>{list}</span>. When you pass a list into a conditional it will compare
+                each of the items of the list. Rewrite the if statement of this script to accept the same cue types but using a list.
+            </p>
+            <p><span style="color:#F39C12;font-weight:bold">rad</span>.</p>
         </div>
 
         <div style="margin-bottom:100px">
-            <h3>
+            <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
+        </div>
+        <div>
+            <img src="{% static "media/tutes/uselist/sol.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+
+        <div class="container">
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#uselist" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='uselist'>
+                <pre>
+global dialogTitle
+set dialogTitle to "Change Master Level"
+
+tell application id "com.figure53.qlab.4" to tell front workspace
+	
+    set changeAmount to my enterSomeText("Change the master level of selected cues by this much:", 0, false)
+
+    set theSelection to selected
+    repeat with eachCue in theSelection
+        if q type of eachCue is in {"Audio", "Video", "Fade"} then
+            tell front workspace
+                set currentLevel to eachCue getLevel row 0 column 0
+                set newLevel to currentLevel + changeAmount
+                eachCue setLevel row 0 column 0 db newLevel
+            end tell
+        end if
+    end repeat
+end tell
+
+on enterSomeText(thePrompt, defaultAnswer, emptyAllowed) -- [Shared subroutine]
+    tell application id "com.figure53.QLab.4"
+        set theAnswer to ""
+        repeat until theAnswer is not ""
+            set theAnswer to text returned of (display dialog thePrompt with title dialogTitle default answer defaultAnswer buttons {"Cancel", "OK"} ¬
+                default button "OK" cancel button "Cancel")
+            if emptyAllowed is true then exit repeat
+        end repeat
+        return theAnswer
+    end tell
+end enterSomeText</pre> 
+            </div> 
+        </div> 
+
+        <div style="margin-bottom:100px">
+            <h3 style="text-align:center;">
             <a href="{% url 'addvideo' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
             </h3>
         </div>

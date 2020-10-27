@@ -8,26 +8,47 @@
         </div>
         <div class='content-section m-2'>
             <p>Here we see armed is a boolean property of a cue object, which means it's only possible states are 
-            <span style="color:#F39C12;font-weight:bold">true</span> and <span style="color:#F39C12;font-weight:bold">false.</span>
-            To construct an applescript we'll need a few things.</p> 
-            </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+            <span style="color:#F39C12;font-weight:bold">true</span> and <span style="color:#F39C12;font-weight:bold">false</span>. Below is a
+            basic script for setting a cue to <span style="color:#F39C12;font-weight:bold">armed</span>. It starts with the <span style="color:#F39C12;font-weight:bold">tell block</span> 
+            identifying QLab as the intended application focusing on the front window as expected. Next there is a comment from the programmer reiterating the 
+            syntax to set values in applescript. Following that we have the declation of the <span style="color:#F39C12;font-weight:bold">variable myQ</span>.* Recall that green syntax highlighting 
+            is for variables. Next in purple we see that we are changing the <span style="color:#F39C12;font-weight:bold">armed</span> property of myQ to true. And finally we close the script 
+            with an <span style="color:#F39C12;font-weight:bold">end tell</span>.</p> 
         </div>
         <div class='content-section m-2'>
-            <p>REcall the options available for boolean propertires and modify the third line of this
-            script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
+            <pre>
+tell application "com.figurer53.Qlab.4" to tell front workspace
+    set myQ to last item of (selected as list)
+    set armed of myQ to true 
+end tell</pre>
         </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
+        {% comment %} <div>
+            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div> {% endcomment %}
+        <div class='content-section m-2'>
+            <p>Recall the options available for boolean properties and modify this
+            script so that it changes the selected cue to disarmed instead of armed.</p>
         </div>
 
+        <div class="container">
+            <h3> <span style="color:#F39C12;">Click to reveal solution</span></h3>
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" id="reveal">Reveal</button> 
+            <div class='collapse m-2' id='demo'>
+                <pre>
+tell application "com.figurer53.Qlab.4" to tell front workspace
+    set myQ to last item of (selected as list)
+    set armed of myQ to false 
+end tell</pre> 
+            </div> 
+        </div> 
+<div><p>* camelCase vs snake_case</p></div>
+            
         <div style="margin-bottom:100px">
-            <h3>
-            <a href="{% url 'projmanager' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            <h3 style="text-align:center;">
+            <a href="{% url 'projmanager' %}" style="color:#F39C12;">Continue to the next exercise.</a>
             </h3>
         </div>
-
+        
 
 
     </div>

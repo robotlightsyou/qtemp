@@ -9599,11 +9599,12 @@ a.text-dark:hover {
     text-align: inherit;
 }
 
-.btn-primary {
+.btn-primary, #reveal {
     color: #375a7f;
     background-color: #F39C12;
     border-color: #375a7f;
 }
+
 
 .jumbotron bg-cover{
 	/* background-image: url('media/workspace-hotkey.png');  */

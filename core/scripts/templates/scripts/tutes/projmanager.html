@@ -4,25 +4,83 @@
     <div class='container'>
         <h1>some basic projector controls</h1>
         <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/proj/projmandict.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
-            <p>Projector Manager is a free piece of software for contrlling <span style="color:#F39C12;font-weight:bold">Panasonic Prjectors</span>.</p> 
+            <p>Projector Manager is a free piece of software for controlling <span style="color:#F39C12;font-weight:bold">Panasonic Prjectors</span>. We can see here that 
+            it operates a little differently than QLab. Here there are no properties to modify, just actions to execute. This is because there are no data objects, you're 
+            making a physical change to the projector and then the script is done. Using the applescript dictionary and this script as a base, modify until you have scripts
+            that will mute, unmute, power on and power off a projector.</p> 
             </div>
         <div>
-            <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/proj/mute.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
-        <div class='content-section m-2'>
-            <p>REcall the options available for boolean propertires and modify the third line of this
-            script so that it changes the selected cue to disarmed instead of armed.</p><p><span style="color:#F39C12;font-weight:bold">Continue scrolling when you have a solution.</span>.</p>
-        </div>
-        <div>
-            <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
+        <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#mute" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='mute'>
+                <pre>
+--check the applescript dictionary for Projector Manager to see how to undowse, or unmute a projector
+tell application "ProjectorManager"
+	AvMute 1 --Close shutter, mute volume projector x
+end tell</pre> 
+            </div> 
         </div>
 
         <div style="margin-bottom:100px">
-            <h3>
-            <a href="{% url 'batchadjust' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
+        </div>
+        <div>
+            <img src="{% static "media/tutes/proj/unmute.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+
+        <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12; text-align:center;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#unmute" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='unmute'>
+                <pre>
+--check the applescript dictionary for Projector Manager to see how to undowse, or unmute a projector
+tell application "ProjectorManager"
+	AvUnMute 1 --Open shutter, unmute volume projector x
+end tell</pre> 
+            </div> 
+        </div>
+
+        <div>
+            <img src="{% static "media/tutes/proj/poweron.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+        <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#poweron" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='poweron'>
+                <pre>
+--check the applescript dictionary for Projector Manager to see how to undowse, or unmute a projector
+tell application "ProjectorManager"
+	PowerOn 1 --Send poweron command to projector x
+end tell</pre> 
+            </div> 
+        </div>
+
+        <div>
+            <img src="{% static "media/tutes/proj/poweroff.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+        <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#poweroff" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='poweroff'>
+                <pre>
+--check the applescript dictionary for Projector Manager to see how to undowse, or unmute a projector
+tell application "ProjectorManager"
+	PowerOff 1 --Send poweroff command to projector x
+end tell</pre> 
+            </div> 
+        </div> 
+
+
+
+        <div style="margin-bottom:100px">
+            <h3 style="text-align:center;">
+            <a href="{% url 'scope' %}" style="color:#F39C12;">Continue to the next exercise.</a>
             </h3>
         </div>
 

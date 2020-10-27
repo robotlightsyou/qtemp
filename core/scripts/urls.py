@@ -28,4 +28,6 @@ urlpatterns = [
     path('fadein', views.fadein, name='fadein'),
     path('projmanager', views.projmanager, name='projmanager'),
     path('uselist', views.uselist, name='uselist'),
+    path('scope', views.scope, name='scope'),
+    path('resources', views.resources, name='resources'),
 ]

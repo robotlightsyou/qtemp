@@ -4,12 +4,72 @@
     <div class='container'>
         <h1>batch multiple cues at once</h1>
         <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/batchadj/contmodeincomplete.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
-            <p>Using loops you can batch adjust multiple cues with one <span style="color:#F39C12;font-weight:bold">hotkey</span>.</p> 
-            </div>
+            <p>Using loops you can batch adjust multiple cues with one <span style="color:#F39C12;font-weight:bold">hotkey</span>. In 
+            this script we have the prototype for changing the continue mode of a cue. It starts by defining what will be shown to the user. 
+            Then there is the tell block followed by a repeat to let us execute this script on multiple cues at once. After the repeat we get
+            to the part we will focus onfor this exercise. Our if statement looks for contained in <span>theText</span>. Notice how the 1 is in 
+            quotations. This is because input from the user is returned as text, even when they enter a number. Following the format for <span>do_not_continue</span>, 
+            add your own else if statements to catch user input for the additional options in the prompt. Recall that omitting an else statement will leave the selected
+            cue untouched when all conditions fail.
+            
+            </p>
+            <p>While this functionality has been added to the 
+            basics tab in the cue editor, this is a handy script if you still have to work with QLab 3. </p>
+
+        <div style="margin-bottom:100px">
+            <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
+        </div>
         <div>
+            <img src="{% static "media/tutes/batchadj/complete.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div> 
+
+            <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12; text-align:center;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#batch" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='batch'>
+            <pre>
+global dialogTitle
+set dialogTitle to "Batch adjust Continue Mode"
+
+set theText to my enterSomeText("Set Continue Mode of selected cues to:
+	
+    1 - Do Not Continue
+    2 - Auto-Continue
+    3 - Auto-Follow
+    4 - Cancel", "4", false)
+
+tell application id "com.figure53.qlab.4" to tell front workspace
+	
+    repeat with eachCue in (selected as list)
+        if theText is "1" then
+            set continue mode of eachCue to do_not_continue
+        else if theText is "2" then
+            set continue mode of eachCue to auto_continue
+        else if theText is "3" then
+            set continue mode of eachCue to auto_follow
+        end if
+    end repeat
+end tell
+
+on enterSomeText(thePrompt, defaultAnswer, emptyAllowed) -- [Shared subroutine]
+    tell application id "com.figure53.QLab.4"
+        set theAnswer to ""
+        repeat until theAnswer is not ""
+            set theAnswer to text returned of (display dialog thePrompt with title dialogTitle default answer defaultAnswer buttons {"Cancel", "OK"} ¬
+                default button "OK" cancel button "Cancel")
+            if emptyAllowed is true then exit repeat
+        end repeat
+        return theAnswer
+    end tell
+end enterSomeText</pre>
+            </div> 
+        </div>
+            
+            </div>
+        {% comment %} <div>
             <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
@@ -18,14 +78,13 @@
         </div>
         <div>
             <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
-        </div>
+        </div> {% endcomment %}
 
         <div style="margin-bottom:100px">
-            <h3>
-            <a href="{% url 'bumplower' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
+            <h3 style="text-align:center;">
+            <a href="{% url 'bumplower' %}" style="color:#F39C12;">Continue to the next exercise.</a>
             </h3>
         </div>
-
 
 
     </div>
