@@ -4,12 +4,44 @@
     <div class='container'>
         <h1>convert bump up to bump down</h1>
         <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/bumplower/inc.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
-            <p>Like thedisarm script, this is a simple adjustmnet to change the <span style="color:#F39C12;font-weight:bold">master audio level</span>.</p> 
-            </div>
+            <p>Like the disarm script, this is a simple adjustmnet to change the <span style="color:#F39C12;font-weight:bold">master audio level</span>. This scripts
+            starts by checking the current value of row 0 column 0, which is the master. To adjust other out puts change the column. To adjust the different inputs
+            change the row. Once we have the current value we can add the change amount, and then reassign that value to row 0 column 0. Can you think of how to modify
+            this script so that it lowers the master volume by 2.5db?</p> 
+        </div>
+        
+        <div style="margin-bottom:100px">
+            <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
+        </div>
         <div>
+            <img src="{% static "media/tutes/bumplower/sol.png" %}" alt="img could not load" class="img-fluid m-2">
+        </div>
+
+        <div class="container">
+            {% comment %} <h3> <span style="color:#F39C12; text-align:center;">Click to reveal solution</span></h3> {% endcomment %}
+            <button type="button" class="btn btn-info m-2" data-toggle="collapse" data-target="#bumplower" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='bumplower'>
+                <pre>
+tell application id "com.figure53.qlab.4" to tell front workspace
+    -- change this number to change the amount to bump by. 
+    set changeAmount to 2.5
+    set theSelection to selected
+    repeat with eachCue in theSelection
+        if q type of eachCue is "Audio" or q type of eachCue is "Fade" or q type of eachCue is "Video" then
+            tell front workspace
+                set currentLevel to eachCue getLevel row 0 column 0
+                set newLevel to currentLevel - changeAmount
+                eachCue setLevel row 0 column 0 db newLevel
+            end tell
+        end if
+    end repeat
+end tell</pre> 
+            </div> 
+        </div> 
+        {% comment %} <div>
             <img src="{% static "media/tutes/disarm/armed.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
@@ -18,10 +50,10 @@
         </div>
         <div>
             <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
-        </div>
+        </div>{% endcomment %}
 
         <div style="margin-bottom:100px">
-            <h3>
+            <h3 style="text-align:center;">
             <a href="{% url 'uselist' %}" style="color:#F39C12; text-align:center;"> Continue to the next exercise.</a>
             </h3>
         </div>

@@ -5,13 +5,31 @@
         <h1>scope and functions</h1>
         <div class='content-section m-2'>
             <p>Here is the script we will be modifying in the next cahllenge, but first I want to walkthrough
-            some new <span style="color:#F39C12;font-weight:bold">comaponents</span> and <span style="color:#F39C12;font-weight:bold">concepts</span>.</p> 
-            </div>
-        <div> 
+            some new <span style="color:#F39C12;font-weight:bold">components</span> and <span style="color:#F39C12;font-weight:bold">concepts</span>.</p> 
+        </div>
         <div>
             <img src="{% static "media/tutes/scope/contmodeincomplete.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
         <div class='content-section m-2'>
+            <p>The first thing we see is the declaration of a global variable. Global is a reference to the scope, and it means that the variable can 
+            be referenced from anywhere in the script. I mentioned before that a scope roughly is the level of indentation, but that's not entirely true. 
+            When we use certain keywords we create a new layer in our execution for an action to occur. In this script we see this carried out with the 
+            repeat command. Everything that exists between repeat and end repeat represents that scope. Variables that are declared within that block are 
+            only available within that block. Most of our scripts will be short enough that this won't be a large concern, but it is something we must 
+            be aware of.</p>
+
+            <p>if/else statements also create scope. You start with an if conditional. If that ccondition is true the enclosed block of code will be 
+            executed on your selected cue. If not you can proceed to an additional condition using "else if". Last you have the option of including an else statement. 
+            If your conditions aren't met you can execute a block of code with the else statement, or you can leave the selected cue alone by omitting the 
+            else statement.</p>
+            
+            <p>Also introduced in this script are subroutines, or functions in other programming languages. A function is a block of code you 
+            want to call multiple times. If we were only getting input from the user once we would't need to separate this into a subroutine. But, since this 
+            functionality is highly reusable in other scripts we write it into a funtion for modularity so we can reuse it elsewhere.</p>
+            <p>(selected as list) is the last new idea to cover. I use this all over the place as a failsafe. There are situations where using selected makes sense,
+            howver most of my scripts by default are written to batch edit so I often just use (selected as list) as a catchall. Write this section better.</p> 
+        </div>
+        {% comment %} <div class='content-section m-2'>
             <p>Using loops you can batch adjust multiple cues with one <span style="color:#F39C12;font-weight:bold">hotkey</span>.</p> 
             </div>
         <div>
@@ -23,7 +41,7 @@
         </div>
         <div>
             <img src="{% static "media/tutes/disarm/disarmed.png" %}" alt="img could not load" class="img-fluid m-2">
-        </div>
+        </div> {% endcomment %}
 
         <div style="margin-bottom:100px">
             <h3 style="text-align:center;">
