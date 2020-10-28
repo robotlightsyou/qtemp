@@ -9578,7 +9578,7 @@ a.text-dark:hover {
 .list-group-item-action:focus,
 .list-group-item-action:hover {
     background-color: #F39C12;
-    color: #fff;
+    color: #375a7f;
 }
 .list-group-item-action .list-group-item-heading {
     color: #fff;
@@ -9603,6 +9603,13 @@ a.text-dark:hover {
     color: #375a7f;
     background-color: #F39C12;
     border-color: #375a7f;
+    
+}
+
+#reveal:hover {
+    color: #fff;
+    background-color: #375a7f;
+    border-color: #375a7f;
 }
 
 
@@ -9613,28 +9620,3 @@ a.text-dark:hover {
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
 }
-
-
-/* .jumbotron {
-    text-align: center;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    text-shadow: 2px 2px #000;
-  }
-.bg-cover {
-    background-size: cover;
-    color: white;
-    background-position: center center;
-    position: relative;
-    z-index: -2;
-  }
-  .overlay {
-    background-color: #000;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-  } */

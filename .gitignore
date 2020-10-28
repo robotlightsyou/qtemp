@@ -7,4 +7,4 @@
 **.zip
 **.sqlite3
 **/media/**
-/* test edit */
+**/__pycache__/**

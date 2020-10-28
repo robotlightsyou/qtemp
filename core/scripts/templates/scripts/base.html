@@ -33,11 +33,11 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            {% comment %} <li class="nav-item active">
                 <a class="nav-link" href="{% url 'scripts-index' %}">home
                 <span class="sr-only">(current)</span>
                 </a>
-            </li>
+            </li> {% endcomment %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'howto' %}">editor</a>
             </li>
@@ -85,6 +85,7 @@
                         <a href="{% url 'uselist' %}" class="list-group-item list-group-item-action">use list</a>
                         <a href="{% url 'addvideo' %}" class="list-group-item list-group-item-action">add video to fade</a>
                         <a href="{% url 'fadein' %}" class="list-group-item list-group-item-action">fadeout --> in</a>
+                        <a href="{% url 'fadefade' %}" class="list-group-item list-group-item-action">fade a fade</a>
                     </div>
                 </ul>
             </div>     
