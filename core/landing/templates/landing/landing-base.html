@@ -18,7 +18,7 @@
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
-        <title>applescript tutes</title>
+        <title>robotlightsyou</title>
     {% endif %}
 {% endblock title %}
 </head>
@@ -26,7 +26,7 @@
 <body>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-warning">
-        <a class="navbar-brand" href="{% url 'landing' %}">robot<span style="color:#375A7F;">lights</span>you</a>
+        <a class="navbar-brand" href="{% url 'scripts-index' %}">robot<span style="color:#375A7F;">lights</span>you</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,17 +39,17 @@
                 </a>
             </li> {% endcomment %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'howto' %}">editor</a>
+                <a class="nav-link" href="{% url 'resume' %}">entertainment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">chapters</a>
+                <a class="nav-link" href="{% url 'scripts-index' %}"> education</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">template</a>
+                <a class="nav-link" href="{% url 'contact' %}">contact</a>
             </li>
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
                 <a class="nav-link" href="{% url 'resources' %}">resources</a>
-            </li>
+            </li> {% endcomment %}
             </ul>
             {% comment %} <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -58,22 +58,19 @@
         </div>
     </nav>
 
-            {% block jumbo %}
-        <div class="jumbotron">
-                <style>
-                    #jum {text-align: center;font-size:7vh;margin-top:75px;}
-                </style>
-                <h1 id='jum'>qlab <span style="color:#F39C12;font-weight:bold">applescript</span> tutorial</h1>
-            {% endblock jumbo %}
-        </div>
+        {% block jumbo %}
+            <div class="jumbotron">
+                <h1 style="text-align:center;">welcome to robot<span style='color:#375A7F'>lights</span>you</h1>
+            </div>
+        {% endblock jumbo %}
     
     <div class="container">
         <div class='row'>
-            <div class="col-md-8">
+            <div class="col-md-12">
                 {% block content %}{% endblock content %}
             </div>
             {% comment %} Sidebar {% endcomment %}
-            <div class="col-md-4">
+            {% comment %} <div class="col-md-4">
                 <ul>
                     <div class="list-group">
                         <span style="font-size:large, font-weight:bold; color:375A7F"><a href="#" class="list-group-item list-group-item-action active">chapters</a></span>
@@ -88,7 +85,7 @@
                         <a href="{% url 'fadefade' %}" class="list-group-item list-group-item-action">fade a fade</a>
                     </div>
                 </ul>
-            </div>     
+            </div>      {% endcomment %}
         </div>   
     </div>
-</body>
+</body
