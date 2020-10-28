@@ -30,4 +30,5 @@ urlpatterns = [
     path('uselist', views.uselist, name='uselist'),
     path('scope', views.scope, name='scope'),
     path('resources', views.resources, name='resources'),
+    path('fadefade', views.fadefade, name='fadefade'),
 ]

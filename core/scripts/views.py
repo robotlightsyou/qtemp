@@ -47,3 +47,7 @@ def scope(request):
 
 def resources(request):
     return render(request, 'scripts/resources.html', {'title': 'resources'})
+
+def fadefade(request):
+    return render(request, 'scripts/tutes/fadefade.html', {'title': 'fade a fade'})
+

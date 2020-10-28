@@ -4,11 +4,108 @@
     <div class='container'>
         <h1>add video to fade</h1>
         <div>
-            <img src="{% static "media/tutes/disarm/armed_def.png" %}" alt="img could not load" class="img-fluid m-2">
+            <img src="{% static "media/tutes/addvideo/cleanprompt.png" %}" alt="img could not load" class="img-fluid m-2">
         </div>
+        <div class="container">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addvideo" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='addvideo'>
+                <pre>
+tell application id "com.figure53.qlab.4" to tell front workspace
+	
+    set userDuration to 5
+    set originalCue to last item of (selected as list)
+    set originalCueType to q type of originalCue
+    set qnameStr to "Fade out: " & q name of originalCue
+
+    if originalCueType is in "Audio" then
+        make type "Fade"
+        set newCue to last item of (selected as list)
+        set properties of newCue to {cue target:originalCue, duration:userDuration, q name:qnameStr}
+        newCue setLevel row 0 column 0 db "-INF"
+        set stop target when done of newCue to true
+        
+    end if
+end tell</pre> 
+            </div> 
+        </div> 
+
         <div class='content-section m-2'>
-            <p>HIn this script we'll add a <span style="color:#F39C12;font-weight:bold">video fade</span> to an <span style="color:#F39C12;font-weight:bold">audio fade</span>.</p> 
+            <p>In this script we'll add a <span style="color:#F39C12;font-weight:bold">video fade</span> to an <span style="color:#F39C12;font-weight:bold">audio fade</span>. We see 
+            the picture a basic fade out script. It takes a single cue, checks if it is of type audio, and if so it creates a fade out targeting the audio cue. To start this challenge 
+            add video to the if clause. Videos have opacity as well as audio, add a line to fade the video to 0 as well. <span>HINT:</span> be sure to read the dictionary entry for 
+            video cues as well as fade cues.</p> 
+        </div>
+        
+
+
+        <div style="margin-bottom:100px">
+            <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
+        </div>
+
+         <div class="container">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addvideosol" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='addvideosol'>
+                <div>
+                    <img src="{% static "media/tutes/addvideo/sol.png" %}" alt="img could not load" class="img-fluid m-2">
+                </div>
+       
+                <pre>
+tell application id "com.figure53.qlab.4" to tell front workspace
+	
+    set userDuration to 5
+    set originalCue to last item of (selected as list)
+    set originalCueType to q type of originalCue
+    set qnameStr to "Fade out: " & q name of originalCue
+
+    if originalCueType is in {"Audio", "Video", "Fade"} then
+        make type "Fade"
+        set newCue to last item of (selected as list)
+        set properties of newCue to {cue target:originalCue, duration:userDuration, q name:qnameStr}
+        newCue setLevel row 0 column 0 db "-INF"
+        set stop target when done of newCue to true
+        set do opacity of newCue to true
+        set opacity of newCue to 0
+        
+    end if
+end tell</pre> 
+            </div> 
+        </div>
+
+        <div class='content-section m-2'>
+            <p><span>Note</span>: did you catch the properties as list? We could have broken those into individual lines like this</p>
+            
+            <pre>
+set cue target of newCue to originalCue
+set duration of newCue to userDuration
+set q name of newCue to qnameStr</pre>
+            <p>The problem with this is it introduces lots of repetition. If for some reason we changed the varaible name newCue we would have to rewrite 3 lines of code instead of one. 
+            In fact, I only split the last 3 properties into individual lines to highlight them, a production version of this script would look more like</p>
+             <div class="container">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#prod" id="reveal">Show code</button> 
+            <div class='collapse m-2' id='prod'>
+            <div>
+                <img src="{% static "media/tutes/addvideo/prod.png" %}" alt="img could not load" class="img-fluid m-2">
             </div>
+       
+            <pre>
+tell application id "com.figure53.qlab.4" to tell front workspace
+	
+    set userDuration to 5
+    set originalCue to last item of (selected as list)
+    set originalCueType to q type of originalCue
+    set qnameStr to "Fade out: " & q name of originalCue
+
+    if originalCueType is in {"Audio", "Video", "Fade"} then
+        make type "Fade"
+        set newCue to last item of (selected as list)
+        set properties of newCue to {cue target:originalCue, duration:userDuration, q name:qnameStr, stop target when done:true, do opacity:true, opacity:0}
+        newCue setLevel row 0 column 0 db "-INF"
+    end if
+
+end tell</pre>
+        </div>  
+        </div></div>
+
 
 
         <div style="margin-bottom:100px">
