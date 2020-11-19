@@ -8,4 +8,235 @@
         </div>
  
     </div>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>CREATE 5S FADE IN</title>
+	<style type="text/css" media="screen"><!--
+.uncompiled {
+	font-family : Menlo-Regular;
+	color : #7F007F;
+}
+.normal {
+	font-family : Verdana;
+	color : #fff;
+}
+.langKeyword {
+	font-family : Verdana-Bold;
+	color : #fff;
+}
+.appKeyword {
+	font-family : Verdana;
+	color : #0000FF;
+}
+.comment {
+	font-family : Verdana;
+	color : #8C8E8E;
+}
+.literal {
+	font-family : Verdana;
+	color : #fff;
+}
+.userDefine {
+	font-family : Verdana;
+	color : #407F00;
+}
+.stringLiteral {
+	font-family : Verdana;
+	color : #fff;
+}
+.commandName {
+	font-family : Verdana-Bold;
+	color : #0000FF;
+}
+.parameterName {
+	font-family : Verdana;
+	color : #0000FF;
+}
+.className {
+	font-family : Verdana-Italic;
+	color : #0000FF;
+}
+.propertyName {
+	font-family : Verdana;
+	color : #6C05D3;
+}
+.enumeratedValues {
+	font-family : Verdana-Italic;
+	color : #6C05D3;
+}
+.additionCommandName {
+	font-family : Verdana-Bold;
+	color : #0016A0;
+}
+.additionParameterName {
+	font-family : Verdana;
+	color : #0016A0;
+}
+.additionClass {
+	font-family : Verdana-Italic;
+	color : #0016A0;
+}
+.additionProperty {
+	font-family : Verdana;
+	color : #4415A0;
+}
+.additionEnumeratedValue {
+	font-family : Verdana-Italic;
+	color : #4415A0;
+}
+.sourceCode  {
+	font-family: sans-serif;
+	margin: 0.5ex 2em;
+	padding: 1ex;
+    border: solid 2px silver;
+    }
+.scriptButton {
+    float:right;}
+--></style>
+</head>
+
+<body>
+	<div class="sourceCode">
+        <div class="scriptButton">
+            <input type="button" value="CREATE 5S FADE IN" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=(*Tested%20in%20QLab%203.2.14.%20Original%20from%20Rich%20Walsh%20template.*)%0D%0D--not%20setting%20level%20of%20fade%20when%20target%20is%20a%20fade,%20must%20do%20manually,%20other%20q%20types%20work.%0D%0D%0Dtell%20application%20id%20%22com.figure53.qlab.3%22%20to%20tell%20front%20%C2%ABclass%20qDoc%C2%BB%0D%09%0D%09%0D%09set%20userDuration%20to%205%0D%09set%20userBump%20to%205%0D%09set%20originalCue%20to%20last%20item%20of%20(%C2%ABclass%20qSEL%C2%BB%20as%20list)%0D%09set%20originalCueType%20to%20%C2%ABclass%20qTyp%C2%BB%20of%20originalCue%0D%09set%20qnameStr%20to%20%22Fade%20out:%20%22%20%26%20%C2%ABclass%20qNam%C2%BB%20of%20originalCue%0D%09%0D%09set%20%C2%ABclass%20qCon%C2%BB%20of%20originalCue%20to%20%C2%ABconstant%20ContDoCo%C2%BB%0D%09originalCue%20%C2%ABevent%20QLablevs%C2%BB%20given%20%C2%ABclass%20levR%C2%BB:0,%20%C2%ABclass%20levC%C2%BB:0,%20%C2%ABclass%20levD%C2%BB:-70%0D%09if%20originalCueType%20is%20in%20%7B%22Group%22,%20%22Audio%22,%20%22Video%22%7D%20then%0D%09%09%C2%ABevent%20QLabmake%C2%BB%20given%20%C2%ABclass%20newT%C2%BB:%22Fade%22%0D%09%09set%20newCue%20to%20last%20item%20of%20(%C2%ABclass%20qSEL%C2%BB%20as%20list)%0D%09%09set%20properties%20of%20newCue%20to%20%7B%C2%ABclass%20qQTr%C2%BB:originalCue,%20%C2%ABclass%20qDur%C2%BB:userDuration,%20%C2%ABclass%20qNam%C2%BB:qnameStr%7D%0D%09%09newCue%20%C2%ABevent%20QLablevs%C2%BB%20given%20%C2%ABclass%20levR%C2%BB:0,%20%C2%ABclass%20levC%C2%BB:0,%20%C2%ABclass%20levD%C2%BB:0%0D%09%09%0D%09%09if%20originalCueType%20is%20%22Video%22%20then%0D%09%09%09set%20%C2%ABclass%20qOpa%C2%BB%20of%20newCue%20to%20100%0D%09%09%09set%20%C2%ABclass%20qDoO%C2%BB%20of%20newCue%20to%20true%0D%09%09%09set%20%C2%ABclass%20qOpa%C2%BB%20of%20originalCue%20to%200%0D%09%09%09set%20%C2%ABclass%20qDoO%C2%BB%20of%20originalCue%20to%20true%0D%09%09%09%0D%09%09end%20if%0D%09%09%0D%09%09set%20%C2%ABclass%20qNam%C2%BB%20of%20newCue%20to%20%22Fade%20up:%20%22%20%26%20%C2%ABclass%20qNam%C2%BB%20of%20originalCue%0D%09%09%0D%09%09%0D%09else%20if%20originalCueType%20is%20%22Fade%22%20then%0D%09%09set%20originalCueTarget%20to%20%C2%ABclass%20qQTr%C2%BB%20of%20originalCue%0D%09%09%C2%ABevent%20QLabmake%C2%BB%20given%20%C2%ABclass%20newT%C2%BB:%22Fade%22%0D%09%09set%20newCue%20to%20last%20item%20of%20(%C2%ABclass%20qSEL%C2%BB%20as%20list)%0D%09%09set%20properties%20of%20newCue%20to%20%7B%C2%ABclass%20qQTr%C2%BB:originalCue,%20%C2%ABclass%20qDur%C2%BB:userDuration,%20%C2%ABclass%20qNam%C2%BB:qnameStr%7D%0D%09%09%0D%09%09(*%0A%09%09set%20currentLevel%20to%20newCue%20getLevel%20row%200%20column%200%0A%09%09set%20newLevel%20to%20currentLevel%20%2B%20userBump%0A%09%09newCue%20setLevel%20row%200%20column%200%20%20%22%2B%22%20%26%20newLevel%0A%09%09*)%0D%09%09%0D%09%09(*%0A%09%09if%20q%20type%20of%20originalCueTarget%20is%20not%20%22Video%22%20then%0A%09%09%09set%20stop%20target%20when%20done%20of%20newCue%20to%20true%0A%09%09end%20if%0A%09%09*)%0D%09%09%0D%09%09set%20%C2%ABclass%20qNam%C2%BB%20of%20newCue%20to%20%22Fade%20up:%20%22%20%26%20%C2%ABclass%20qNam%C2%BB%20of%20originalCueTarget%0D%09end%20if%0Dend%20tell%0D" />
+        </div>
+        <div>
+<span class="comment">(*Tested in QLab 3.2.14. Original from Rich Walsh template.*)</span>
+</div>
+<br />
+<div>
+<span class="comment">--not setting level of fade when target is a fade, must do manually, other q types work.</span>
+</div>
+<br /><br />
+<div>
+<span class="langKeyword">tell</span> <span class="className">application</span> <span class="enumeratedValues">id</span><span class="normal"> &quot;com.figure53.qlab.3&quot; </span><span class="langKeyword">to</span> <span class="langKeyword">tell</span> <span class="langKeyword">front</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qDoc»</span>
+</div>
+<br /><br />
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span> <span class="userDefine">userDuration</span> <span class="langKeyword">to</span><span class="normal"> 5</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span> <span class="userDefine">userBump</span> <span class="langKeyword">to</span><span class="normal"> 5</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span> <span class="userDefine">originalCue</span> <span class="langKeyword">to</span> <span class="langKeyword">last</span> <span class="className">item</span> <span class="langKeyword">of</span><span class="normal"> («</span><span class="className">class</span><span class="normal"> qSEL» </span><span class="langKeyword">as</span> <span class="className">list</span><span class="normal">)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span> <span class="userDefine">originalCueType</span> <span class="langKeyword">to</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qTyp» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span> <span class="userDefine">qnameStr</span> <span class="langKeyword">to</span><span class="normal"> &quot;Fade out: &quot; &amp; «</span><span class="className">class</span><span class="normal"> qNam» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span>
+</div>
+<br />
+<div style="text-indent:4ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qCon» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span> <span class="langKeyword">to</span><span class="normal"> «</span><span class="className">constant</span><span class="normal"> ContDoCo»</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">originalCue</span><span class="normal"> «</span><span class="className">event</span><span class="normal"> QLablevs» </span><span class="langKeyword">given</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> levR»:0, «</span><span class="className">class</span><span class="normal"> levC»:0, «</span><span class="className">class</span><span class="normal"> levD»:-70</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">if</span> <span class="userDefine">originalCueType</span> <span class="langKeyword">is</span> <span class="langKeyword">in</span><span class="normal"> {&quot;Group&quot;, &quot;Audio&quot;, &quot;Video&quot;} </span><span class="langKeyword">then</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="normal">«</span><span class="className">event</span><span class="normal"> QLabmake» </span><span class="langKeyword">given</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> newT»:&quot;Fade&quot;</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span> <span class="langKeyword">last</span> <span class="className">item</span> <span class="langKeyword">of</span><span class="normal"> («</span><span class="className">class</span><span class="normal"> qSEL» </span><span class="langKeyword">as</span> <span class="className">list</span><span class="normal">)</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span> <span class="additionProperty">properties</span> <span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span><span class="normal"> {«</span><span class="className">class</span><span class="normal"> qQTr»:</span><span class="userDefine">originalCue</span><span class="normal">, «</span><span class="className">class</span><span class="normal"> qDur»:</span><span class="userDefine">userDuration</span><span class="normal">, «</span><span class="className">class</span><span class="normal"> qNam»:</span><span class="userDefine">qnameStr</span><span class="normal">}</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="userDefine">newCue</span><span class="normal"> «</span><span class="className">event</span><span class="normal"> QLablevs» </span><span class="langKeyword">given</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> levR»:0, «</span><span class="className">class</span><span class="normal"> levC»:0, «</span><span class="className">class</span><span class="normal"> levD»:0</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="langKeyword">if</span> <span class="userDefine">originalCueType</span> <span class="langKeyword">is</span><span class="normal"> &quot;Video&quot; </span><span class="langKeyword">then</span>
+</div>
+<div style="text-indent:12ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qOpa» </span><span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span><span class="normal"> 100</span>
+</div>
+<div style="text-indent:12ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qDoO» </span><span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span> <span class="enumeratedValues">true</span>
+</div>
+<div style="text-indent:12ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qOpa» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span> <span class="langKeyword">to</span><span class="normal"> 0</span>
+</div>
+<div style="text-indent:12ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qDoO» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span> <span class="langKeyword">to</span> <span class="enumeratedValues">true</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="langKeyword">end</span> <span class="langKeyword">if</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qNam» </span><span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span><span class="normal"> &quot;Fade up: &quot; &amp; «</span><span class="className">class</span><span class="normal"> qNam» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span>
+</div>
+<br /><br />
+<div style="text-indent:4ex;">
+<span class="langKeyword">else</span> <span class="langKeyword">if</span> <span class="userDefine">originalCueType</span> <span class="langKeyword">is</span><span class="normal"> &quot;Fade&quot; </span><span class="langKeyword">then</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span> <span class="userDefine">originalCueTarget</span> <span class="langKeyword">to</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qQTr» </span><span class="langKeyword">of</span> <span class="userDefine">originalCue</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="normal">«</span><span class="className">event</span><span class="normal"> QLabmake» </span><span class="langKeyword">given</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> newT»:&quot;Fade&quot;</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span> <span class="langKeyword">last</span> <span class="className">item</span> <span class="langKeyword">of</span><span class="normal"> («</span><span class="className">class</span><span class="normal"> qSEL» </span><span class="langKeyword">as</span> <span class="className">list</span><span class="normal">)</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span> <span class="additionProperty">properties</span> <span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span><span class="normal"> {«</span><span class="className">class</span><span class="normal"> qQTr»:</span><span class="userDefine">originalCue</span><span class="normal">, «</span><span class="className">class</span><span class="normal"> qDur»:</span><span class="userDefine">userDuration</span><span class="normal">, «</span><span class="className">class</span><span class="normal"> qNam»:</span><span class="userDefine">qnameStr</span><span class="normal">}</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="comment">(*</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">set currentLevel to newCue getLevel row 0 column 0</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">set newLevel to currentLevel + userBump</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">newCue setLevel row 0 column 0  &quot;+&quot; &amp; newLevel</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">*)</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="comment">(*</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">if q type of originalCueTarget is not &quot;Video&quot; then</span>
+</div>
+<div style="text-indent:12ex;">
+<span class="comment">set stop target when done of newCue to true</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">end if</span>
+</div>
+<div style="text-indent:8ex;">
+<span class="comment">*)</span>
+</div>
+<br />
+<div style="text-indent:8ex;">
+<span class="langKeyword">set</span><span class="normal"> «</span><span class="className">class</span><span class="normal"> qNam» </span><span class="langKeyword">of</span> <span class="userDefine">newCue</span> <span class="langKeyword">to</span><span class="normal"> &quot;Fade up: &quot; &amp; «</span><span class="className">class</span><span class="normal"> qNam» </span><span class="langKeyword">of</span> <span class="userDefine">originalCueTarget</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="langKeyword">end</span> <span class="langKeyword">if</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">tell</span>
+</div>
+	</div>
+</body>
+
 {% endblock content %}
+
