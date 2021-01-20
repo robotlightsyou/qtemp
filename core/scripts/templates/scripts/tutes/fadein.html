@@ -14,11 +14,11 @@
             <span>setLevel</span>. Use <span>getLevel</span> to check the user's settings, and then reapply them after the new fade has been created.</p> 
         </div>
 
-        <div style="margin-bottom:100px">
+        <div class="container">
             <h3 style="color:#F39C12; text-align:center;">Scroll down for solutions.</h3>
         </div>
 
-        <div class="container">
+        <div class="container m-2">
             <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addvideosol" id="reveal">Show code</button> 
             <div class='collapse m-2' id='addvideosol'>
                 <div>
@@ -48,21 +48,6 @@ tell application id "com.figure53.QLab.4" to tell front workspace
                 set opacity of newCue to 0
             end tell
         end if
-        
-    else if originalCueType is "Fade" then
-        set originalCueTarget to cue target of originalCue
-        make type "Fade"
-        set newCue to last item of (selected as list)
-        set qnameStr to "Fade and Stop: " & q name of originalCue
-        set properties of newCue to {cue target:originalCueTarget, duration:userDuration, q name:qnameStr, stop target when done:true}
-        newCue setLevel row 0 column 0 db -120
-        if q type of originalCueTarget is "Video" then
-            tell front workspace to tell paent of newCue
-                set do opacity of newCue to true
-                set opacity of newCue to 0
-            end tell
-        end if
-    end if
 	
 end tell
 </pre> 
